@@ -12,7 +12,7 @@ const getTodos = errorHandler(async(req,res,next)=>{
 const postTodo = errorHandler(async (req,res,next)=>{
     const content = req.body.content;
     const todo = new Todo({content:content});
-    const response = await todo.save();
+    await todo.save();
 
     res.json({message:'Todo Created!'});
 });
