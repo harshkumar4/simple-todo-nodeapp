@@ -19,6 +19,6 @@ const app = express();
 
  
 app.use(express.json());
-app.use(v1Router,errorHandler);
+app.use(v1Router);
 
 app.listen(serverPort);
