@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 
 const errorHandler = require('./src/utils/errorHandler');
