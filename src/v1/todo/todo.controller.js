@@ -11,7 +11,10 @@ const getTodos = errorHandler(async(req,res,next)=>{
 
 const postTodo = errorHandler(async (req,res,next)=>{
     const content = req.body.content;
-    // const todo = new Todo({content:content});
+    if (!content) {
+        res.status(406).json({message: 'Content missing!'});
+        return;
+    }
     await Todo.create({content: content});
 
     res.json({message:'Todo Created!'});
